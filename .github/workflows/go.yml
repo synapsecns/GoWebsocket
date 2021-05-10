@@ -15,11 +15,6 @@ jobs:
         name: Unshallow
         run: git fetch --prune --unshallow
 
-      - name: Bump and push
-        uses: anothrNick/github-tag-action@1.35.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: false
 
       - name: Bump and push
         uses: anothrNick/github-tag-action@1.35.0
