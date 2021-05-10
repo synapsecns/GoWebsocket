@@ -13,7 +13,7 @@ changelog:
       - '^test:'
 release:
   github:
-    owner: sac007
+    owner: synapsecns
     name: GoWebSocket
 
 # add a source archive at release time

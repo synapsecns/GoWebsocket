@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "assignees": [
+    "0xnero"
+  ],
+  "enabledManagers": ["gomod"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchManagers": ["gomod"],
+      "automerge": true,
+      "postUpdateOptions": [
+        "gomodTidy"
+      ]
+    }
+  ]
+}

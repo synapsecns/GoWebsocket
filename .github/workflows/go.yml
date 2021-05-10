@@ -3,11 +3,10 @@ name: goreleaser
 on:
   push:
     branches:
-      - master
+      - synapse/master
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
-    if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     steps:
       -
         name: Checkout
@@ -15,16 +14,18 @@ jobs:
       -
         name: Unshallow
         run: git fetch --prune --unshallow
-      - name: Bump version and push tag
+
+      - name: Bump and push
         uses: anothrNick/github-tag-action@1.35.0
         env:
-          GITHUB_TOKEN: ${{ secrets.FOSS_PACKAGE_TOKEN }}
-          WITH_V: true
-      - name: Bump version and push tag (no v)
-        uses: anothrNick/github-tag-action@1.35.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.FOSS_PACKAGE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: false
+
+      - name: Bump and push
+        uses: anothrNick/github-tag-action@1.35.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
       -
         name: Set up Go
         uses: actions/setup-go@v2

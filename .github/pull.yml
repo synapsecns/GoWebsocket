@@ -1,0 +1,14 @@
+version: "1"
+rules:
+  - base: synapse/master
+    upstream: sacOO7:gqlgenc
+    mergeMethod: rebase
+    mergeUnstable: false
+    assignees:
+      - 0xnero
+    reviewers:
+      - 0xnero
+    conflictReviewers:
+      - 0xnero
+label: ":arrow_heading_down: pull"
+conflictLabel: "merge-conflict"
