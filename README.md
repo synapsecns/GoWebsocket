@@ -1,4 +1,6 @@
 # GoWebsocket
+[![golangci-lint](https://github.com/synapsecns/GoWebsocket/actions/workflows/lint.yaml/badge.svg)](https://github.com/synapsecns/GoWebsocket/actions/workflows/lint.yaml)
+[![goreleaser](https://github.com/synapsecns/GoWebsocket/actions/workflows/go.yml/badge.svg)](https://github.com/synapsecns/GoWebsocket/actions/workflows/go.yml)
 Gorilla websocket based simplified client implementation in GO.
 
 Overview
